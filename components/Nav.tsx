@@ -184,7 +184,8 @@ const Nav = () => {
     { name: "Home", icon: IoHomeOutline, route: "/" },
     { name: "Skills", icon: GiSkills, route: "/skills" },
     { name: "Projects", icon: GoProjectRoadmap, route: "/projects" },
-    { name: "Contact", icon: IoMailOutline, route: "/contact" },
+    { name: "Blog", icon: GoProjectRoadmap, route: "/" },
+    // { name: "Contact", icon: IoMailOutline, route: "/contact" },
   ];
 
   return (
