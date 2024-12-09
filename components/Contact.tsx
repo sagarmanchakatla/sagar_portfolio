@@ -1,4 +1,3 @@
-// components/Contact.js
 "use client";
 import { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
@@ -45,10 +44,6 @@ const Contact = () => {
       setStatus({ loading: false, error: null, success: true });
       setFormData({ firstName: "", lastName: "", email: "", message: "" });
 
-      // Reset success message after 5 seconds
-      // setTimeout(() => {
-      //   setStatus((prev) => ({ ...prev, success: false }));
-      // }, 5000);
       toast("Message sent successfully!", {
         icon: "👏",
         style: {
@@ -76,25 +71,7 @@ const Contact = () => {
 
   return (
     <section
-      className="flex flex-col items-center min-h-[70vh] bg-[#111827] p-10"
-      style={{
-        background: `
-        repeating-linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.045) 0px,
-          rgba(255, 255, 255, 0.045) 2px,
-          transparent 2px,
-          transparent 18px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.045) 0px,
-          rgba(255, 255, 255, 0.045) 2px,
-          transparent 2px,
-          transparent 18px
-        )
-      `,
-      }}
+      className="flex flex-col items-center min-h-[70vh]  p-10"
     >
       <Toaster />
       <div className="max-w-lg w-full p-8 bg-slate-800 rounded-lg shadow-lg">
@@ -111,18 +88,6 @@ const Contact = () => {
           </a>{" "}
           or through this form.
         </p>
-
-        {/* {status.error && (
-          <div className="mb-4 p-3 bg-red-500/10 border border-red-500 text-red-500 rounded-md">
-            {status.error}
-          </div>
-        )} */}
-
-        {/* {status.success && (
-          <div className="mb-4 p-3 bg-green-500/10 border border-green-500 text-green-500 rounded-md">
-            Message sent successfully!
-          </div>
-        )} */}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex space-x-4">

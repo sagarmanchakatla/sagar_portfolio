@@ -1,5 +1,3 @@
-// components/Footer.js
-
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 

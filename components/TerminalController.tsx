@@ -49,28 +49,7 @@ const TerminalController = () => {
   };
 
   return (
-    <div
-      className="flex justify-center items-center min-h-[80vh] p-10 bg-[#111827] "
-      style={{
-        background: `
-        
-        repeating-linear-gradient(
-          0deg,
-          rgba(255, 255, 255, 0.045) 0px,
-          rgba(255, 255, 255, 0.045) 2px,
-          transparent 2px,
-          transparent 18px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.045) 0px,
-          rgba(255, 255, 255, 0.045) 2px,
-          transparent 2px,
-          transparent 18px
-        )
-      `,
-      }}
-    >
+    <div className="flex justify-center items-center min-h-[80vh] p-10  ">
       <div className=" max-w-6xl w-full">
         <h1 className="text-4xl font-bold text-white mb-6">My Terminal</h1>
         <div className="mt-10 h-[500px] text-green-500 shadow-lg ">

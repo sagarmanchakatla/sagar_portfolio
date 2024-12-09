@@ -124,52 +124,16 @@ const Skills = () => {
   };
 
   return (
-    <section
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ duration: 0.5 }}
-      className="w-full min-h-[80vh] flex flex-col"
-      style={{
-        background: `
-          
-          repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          )
-        `,
-      }}
-    >
+    <section className="w-full min-h-[80vh] flex flex-col">
       <div
-        // initial={{ y: 50, opacity: 0 }}
-        // animate={{ y: 0, opacity: 1 }}
-        // transition={{ duration: 0.6 }}
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
         className="h-[70%] w-full p-10 flex justify-center items-center"
       >
         <div className="max-w-6xl w-full h-full">
-          <h1
-            // initial={{ x: -100, opacity: 0 }}
-            // animate={{ x: 0, opacity: 1 }}
-            // transition={{ duration: 0.5 }}
-            className="text-4xl font-bold text-white"
-          >
-            Skills
-          </h1>
-          <div
-            // initial={{ y: 30, opacity: 0 }}
-            // animate={{ y: 0, opacity: 1 }}
-            // transition={{ delay: 0.2, duration: 0.5 }}
-            className="h-full w-full mt-20"
-          >
+          <h1 className="text-4xl font-bold text-white">Skills</h1>
+          <div className="h-full w-full mt-20">
             <Carousel
               showArrows={false}
               showStatus={false}
@@ -187,24 +151,10 @@ const Skills = () => {
               style={{ minHeight: "320px" }}
             >
               {skillsData.map((skill, index) => (
-                <div
-                  // initial={{ scale: 0.8, opacity: 0 }}
-                  // animate={{ scale: 1, opacity: 1 }}
-                  // transition={{ delay: index * 0.1, duration: 0.3 }}
-                  className="px-2 text-left"
-                  key={index}
-                >
-                  <div
-                    // whileHover={{ scale: 1.05 }}
-                    className="bg-[#1e293b] p-6 rounded-lg h-72 mx-2 transition-transform duration-300"
-                  >
+                <div className="px-2 text-left" key={index}>
+                  <div className="bg-[#1e293b] p-6 rounded-lg h-72 mx-2 transition-transform duration-300">
                     <div className="flex items-center gap-4 mb-4">
-                      <div
-                        // initial={{ rotate: -180, opacity: 0 }}
-                        // animate={{ rotate: 0, opacity: 1 }}
-                        // transition={{ duration: 0.5 }}
-                        className="text-[#fdffe2]"
-                      >
+                      <div className="text-[#fdffe2]">
                         {getIcon(skill.icon)}
                       </div>
                       <h3 className="text-2xl font-semibold text-[#fdffe2]">
@@ -221,11 +171,6 @@ const Skills = () => {
             </Carousel>
           </div>
           <button
-            // whileHover={{ scale: 1.05, backgroundColor: "#0E78F9" }}
-            // whileTap={{ scale: 0.95 }}
-            // initial={{ opacity: 0, y: 20 }}
-            // animate={{ opacity: 1, y: 0 }}
-            // transition={{ delay: 0.4, duration: 0.3 }}
             className="px-4 py-3 bg-gray-200 rounded-lg text-black font-medium text-sm flex items-center justify-center gap-2 hover:bg-[#0E78F9] transition-colors m-auto mt-10"
             onClick={() => router.push("/skills")}
           >

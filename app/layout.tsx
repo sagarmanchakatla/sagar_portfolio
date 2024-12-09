@@ -4,7 +4,6 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
-import { ThemeProvider } from "@/components/theme-provider";
 
 // Import Inter font
 const inter = Inter({
@@ -20,17 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="bg-[#111827] gradient main ">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {/* <AnimatedBackground /> */}
-          <Nav />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        {/* <AnimatedBackground /> */}
+        <Nav />
+        {children}
+        <Footer />
       </body>
     </html>
   );

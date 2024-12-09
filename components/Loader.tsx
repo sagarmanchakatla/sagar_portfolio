@@ -100,7 +100,6 @@ const Loader = () => (
         />
       </circle>
     </svg>
-    {/* <p className="text-[#fdffe2] text-lg font-medium">Loading Projects...</p> */}
   </div>
 );
 
