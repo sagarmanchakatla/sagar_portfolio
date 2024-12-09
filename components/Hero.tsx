@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn, FaBlog, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";

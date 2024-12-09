@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { projectsData } from "@/constants/projectData";
-import Loader from "./Loader";
 import ProjectCard from "./ProjectCard";
 import { useRouter } from "next/navigation";
 

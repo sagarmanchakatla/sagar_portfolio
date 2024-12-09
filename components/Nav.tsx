@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { IoHomeOutline } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { GoProjectRoadmap } from "react-icons/go";
-import { IoMailOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 const Nav = () => {

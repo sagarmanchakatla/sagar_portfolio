@@ -1,9 +1,7 @@
 import { Inter } from "@next/font/google";
-import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import AnimatedBackground from "@/components/AnimatedBackground";
 
 // Import Inter font
 const inter = Inter({
