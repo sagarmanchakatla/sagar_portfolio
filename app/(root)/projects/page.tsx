@@ -41,7 +41,7 @@ const ProjectsPage = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (heroRef.current) {
         const rect = heroRef.current.getBoundingClientRect();
         setMousePosition({
