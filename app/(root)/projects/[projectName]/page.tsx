@@ -498,6 +498,7 @@
 // };
 
 // export default ProjectDetailsPage;
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -538,12 +539,16 @@ const ProjectDetailsPage = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  let currentProject;
-  projectsData.forEach((project) => {
-    if (project.title === projectName) {
-      currentProject = project;
-    }
-  });
+  // let currentProject;
+  // projectsData.forEach((project) => {
+  //   if (project.title === projectName) {
+  //     currentProject = project;
+  //   }
+  // });
+
+  const currentProject = projectsData.find(
+    (project) => project.title === projectName
+  );
 
   // Add mouse move effect
   useEffect(() => {
