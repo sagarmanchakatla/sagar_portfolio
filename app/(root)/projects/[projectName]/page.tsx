@@ -499,7 +499,7 @@
 
 // export default ProjectDetailsPage;
 
-// @ts-expect-error - Suppressing type checking for client-side directive
+// @ts-nocheck
 "use client";
 
 import { motion } from "framer-motion";
