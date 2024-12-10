@@ -30,7 +30,7 @@ const AnimatedHeader = () => {
   );
 };
 
-const AnimatedSkillCard = ({ skill, index }) => {
+const AnimatedSkillCard = ({ skill, index }: { skill: any; index: number }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
