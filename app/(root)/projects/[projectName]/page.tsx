@@ -499,6 +499,7 @@
 
 // export default ProjectDetailsPage;
 
+// @ts-ignore
 "use client";
 
 import { motion } from "framer-motion";
@@ -640,7 +641,7 @@ const ProjectDetailsPage = () => {
           className="flex justify-between items-center mb-6"
         >
           <div className="w-full">
-            <h1 className="text-4xl font-bold">{currentProject.title}</h1>
+            <h1 className="text-4xl font-bold">{currentProject?.title}</h1>
           </div>
           <motion.div
             className="flex gap-4 ml-4"
@@ -649,7 +650,7 @@ const ProjectDetailsPage = () => {
             transition={{ delay: 0.4 }}
           >
             <motion.a
-              href={currentProject.liveLink || "#"}
+              href={currentProject?.liveLink || "#"}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -659,7 +660,7 @@ const ProjectDetailsPage = () => {
               <ExternalLink size={24} />
             </motion.a>
             <motion.a
-              href={currentProject.githubLink || "#"}
+              href={currentProject?.githubLink || "#"}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -681,7 +682,7 @@ const ProjectDetailsPage = () => {
         <motion.div variants={itemVariants} className="mb-12 mt-12">
           <h2 className="text-2xl font-semibold mb-4">Tech Stack</h2>
           <div className="flex flex-wrap gap-2 px-5 mt-5">
-            {currentProject.tags.map((tag, index) => (
+            {currentProject?.tags?.map((tag, index) => (
               <motion.span
                 key={index}
                 variants={itemVariants}
@@ -697,18 +698,18 @@ const ProjectDetailsPage = () => {
           <h2 className="text-2xl font-semibold mb-4">Project Summary</h2>
           <div className="space-y-4 text-gray-300 px-6">
             <motion.p variants={itemVariants}>
-              {currentProject.description}
+              {currentProject?.description}
             </motion.p>
-            {currentProject.summary && (
+            {currentProject?.summary && (
               <motion.p variants={itemVariants}>
-                {currentProject.summary}
+                {currentProject?.summary}
               </motion.p>
             )}
           </div>
         </motion.div>
 
         {/* Images Section with Scroll-Based Animations */}
-        {currentProject.images.map((image, index) => (
+        {currentProject?.images?.map((image, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
