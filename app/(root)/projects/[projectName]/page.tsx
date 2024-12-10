@@ -499,7 +499,7 @@
 
 // export default ProjectDetailsPage;
 
-// @ts-ignore
+// @ts-expect-error
 "use client";
 
 import { motion } from "framer-motion";
