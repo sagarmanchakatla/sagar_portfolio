@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { projectsData } from "@/constants/projectData";
 import ProjectCard from "@/components/ProjectCard";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useRef, useState } from "react";
 
 const AnimatedHeader = () => {
   const [ref, inView] = useInView({
@@ -38,7 +37,7 @@ const ProjectsPage = () => {
   });
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
