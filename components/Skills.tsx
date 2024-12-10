@@ -123,9 +123,9 @@ const Skills: React.FC = () => {
               swipeable={true}
               emulateTouch={true}
               selectedItem={0}
-              preventMovementUntilAnimationFinishes={false}
+              // preventMovementUntilAnimationFinishes={false}
               className="custom-carousel"
-              style={{ minHeight: "320px" }}
+              // style={{ minHeight: "320px" }}
             >
               {skillsData.map((skill: Skill, index: number) => (
                 <div className="px-2 text-left" key={index}>
