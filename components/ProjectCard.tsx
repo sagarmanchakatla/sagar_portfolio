@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import { useRouter } from "next/navigation";
 
-const StarRating = ({ rating }) => (
+const StarRating = ({ rating }: { rating: number }) => (
   <div className="flex gap-1">
     {[...Array(5)].map((_, index) => (
       <svg
@@ -33,7 +33,7 @@ const StarRating = ({ rating }) => (
   </div>
 );
 
-const getIcon = (iconName) => {
+const getIcon = (iconName: string) => {
   switch (iconName.toLowerCase()) {
     case "react":
       return <FaReact className="text-4xl" />;
@@ -68,7 +68,7 @@ const getIcon = (iconName) => {
   }
 };
 
-const ProjectCard = ({ project, skills = false }) => {
+const ProjectCard = ({ project, skills = false }: any) => {
   const router = useRouter();
   if (skills) {
     return (
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, skills = false }) => {
       <p className="text-[#AEAAAA] mb-8 text-[16px]">{project.description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tags &&
-          project.tags.map((tag, index) => (
+          project.tags.map((tag: any, index: any) => (
             <span
               key={index}
               className="px-2 py-1 text-xs font-semibold bg-[#fdffe2] text-[#111827] rounded-full"

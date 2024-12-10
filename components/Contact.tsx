@@ -15,14 +15,14 @@ const Contact = () => {
     success: false,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus({ loading: true, error: null, success: false });
 
@@ -55,7 +55,7 @@ const Contact = () => {
     } catch (error) {
       setStatus({
         loading: false,
-        error: error.message,
+        error: error?.message,
         success: false,
       });
       toast("Message sent successfully!", {
@@ -70,9 +70,7 @@ const Contact = () => {
   };
 
   return (
-    <section
-      className="flex flex-col items-center min-h-[70vh]  p-10"
-    >
+    <section className="flex flex-col items-center min-h-[70vh]  p-10">
       <Toaster />
       <div className="max-w-lg w-full p-8 bg-slate-800 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-center text-white mb-4">

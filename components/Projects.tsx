@@ -13,7 +13,7 @@ const Projects = () => {
           <h1 className="text-4xl font-bold text-white mb-6">Projects</h1>
           {/* Responsive Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-            {projectsData.slice(0, 4).map((project, index) => (
+            {projectsData.slice(0, 4).map((project:any, index:any) => (
               <div key={index}>
                 <ProjectCard project={project} skills={false} />
               </div>

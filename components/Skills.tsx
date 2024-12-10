@@ -19,15 +19,28 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useRouter } from "next/navigation";
+import { IconType } from "react-icons";
 
-const StarRating = ({ rating }) => (
+// Define interfaces for type safety
+interface Skill {
+  title: string;
+  description: string;
+  icon: string;
+  rating: number;
+}
+
+interface IconMap {
+  [key: string]: IconType;
+}
+
+const StarRating: React.FC<{ rating: number }> = ({ rating }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.3 }}
     className="flex gap-1"
   >
-    {[...Array(5)].map((_, index) => (
+    {[...Array(5)].map((_, index: number) => (
       <motion.svg
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -45,8 +58,8 @@ const StarRating = ({ rating }) => (
   </motion.div>
 );
 
-const Skills = () => {
-  const [slidePercentage, setSlidePercentage] = useState(33.3);
+const Skills: React.FC = () => {
+  const [slidePercentage, setSlidePercentage] = useState<number>(33.3);
 
   const router = useRouter();
   const updateSlidePercentage = () => {
@@ -65,8 +78,8 @@ const Skills = () => {
     };
   }, []);
 
-  const getIcon = (iconName) => {
-    const icons = {
+  const getIcon = (iconName: string): React.ReactNode => {
+    const icons: IconMap = {
       react: FaReact,
       express: SiExpress,
       node: SiNodedotjs,
@@ -89,7 +102,7 @@ const Skills = () => {
 
   return (
     <section className="w-full min-h-[80vh] flex flex-col">
-      <div
+      <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -114,7 +127,7 @@ const Skills = () => {
               className="custom-carousel"
               style={{ minHeight: "320px" }}
             >
-              {skillsData.map((skill, index) => (
+              {skillsData.map((skill: Skill, index: number) => (
                 <div className="px-2 text-left" key={index}>
                   <div className="bg-[#1e293b] p-6 rounded-lg h-72 mx-2 transition-transform duration-300">
                     <div className="flex items-center gap-4 mb-4">
@@ -141,7 +154,7 @@ const Skills = () => {
             View All
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
