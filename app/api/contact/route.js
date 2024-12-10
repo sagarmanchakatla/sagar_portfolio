@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export async function POST(request: NextRequest) {
+export async function POST(request) {
   // Enable CORS
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
