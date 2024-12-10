@@ -13,7 +13,7 @@ export async function OPTIONS() {
   });
 }
 
-export async function POST(request: Request) {
+export async function POST(request) {
   // Add CORS headers
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
