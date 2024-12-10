@@ -2,20 +2,37 @@
 import { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 
+// Define interfaces for type safety
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
+
+interface Status {
+  loading: boolean;
+  error: string | null;
+  success: boolean;
+}
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState({
+
+  const [status, setStatus] = useState<Status>({
     loading: false,
     error: null,
     success: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -53,12 +70,17 @@ const Contact = () => {
         },
       });
     } catch (error) {
+      // Proper type handling for error
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
+
       setStatus({
         loading: false,
-        error: error?.message,
+        error: errorMessage,
         success: false,
       });
-      toast("Message sent successfully!", {
+
+      toast("Failed to send message", {
         icon: "❌",
         style: {
           borderRadius: "10px",
@@ -135,7 +157,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Enter your message"
-              rows="4"
+              rows={4}
               className="w-full p-2 bg-slate-700 text-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />

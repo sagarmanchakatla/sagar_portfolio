@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { ReactTerminal, TerminalContextProvider } from "react-terminal";
 
 const TerminalController = () => {
-  const terminalRef = useRef(null);
+  const terminalRef = useRef<any>(null);
 
   const commands = {
     help: (
