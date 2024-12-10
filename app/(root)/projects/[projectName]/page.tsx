@@ -500,7 +500,7 @@
 // export default ProjectDetailsPage;
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { projectsData } from "@/constants/projectData";
