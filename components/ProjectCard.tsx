@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Star, StarHalf } from "lucide-react";
 import { FaReact, FaBootstrap, FaPython } from "react-icons/fa";
 import {
   SiExpress,

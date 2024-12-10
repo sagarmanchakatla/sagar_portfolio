@@ -45,42 +45,6 @@ const StarRating = ({ rating }) => (
   </motion.div>
 );
 
-const SliderRating = ({ rating }) => {
-  const percentage = (rating / 5) * 100;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="relative w-full h-8 flex items-center"
-    >
-      {/* Left decorative element */}
-      <div className="absolute left-0 -translate-x-6">
-        <div className="w-4 h-4 border ml-5 border-purple-400 opacity-30 rounded-sm rotate-45" />
-      </div>
-
-      {/* Right decorative element */}
-      <div className="absolute right-0 translate-x-6">
-        <div className="w-4 h-4 border border-purple-400 opacity-30 rounded-sm rotate-45" />
-      </div>
-
-      {/* Main track */}
-      <div className="w-full h-[2px] bg-gray-600 relative">
-        {/* Slider circle */}
-        <motion.div
-          initial={{ left: 0 }}
-          animate={{ left: `${percentage}%` }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2"
-        >
-          <div className="w-4 h-4 bg-white rounded-full" />
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-};
-
 const Skills = () => {
   const [slidePercentage, setSlidePercentage] = useState(33.3);
 

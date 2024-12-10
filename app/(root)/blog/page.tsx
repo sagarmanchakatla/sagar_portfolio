@@ -32,7 +32,7 @@ const page = () => {
   //   }
   // }, []);
 
-  return (
+  return (  
     <motion.div
       // ref={heroRef}
       className="text-3xl flex flex-col text-left text-white h-[100vh] bg-[#111827] mt-15 px-4 py-16 justify-center items-center"
