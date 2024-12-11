@@ -1,10 +1,33 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { ReactTerminal, TerminalContextProvider } from "react-terminal";
 
 const TerminalController = () => {
   const terminalRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      // Prevent default touch behavior
+      const preventScroll = (e: TouchEvent) => {
+        e.preventDefault();
+      };
+
+      container.addEventListener("touchstart", preventScroll, {
+        passive: false,
+      });
+      container.addEventListener("touchmove", preventScroll, {
+        passive: false,
+      });
+
+      return () => {
+        container.removeEventListener("touchstart", preventScroll);
+        container.removeEventListener("touchmove", preventScroll);
+      };
+    }
+  }, []);
 
   const commands = {
     help: (
@@ -32,10 +55,14 @@ const TerminalController = () => {
     skills: () => (
       <div>
         <div>
-          <strong>Frontend:</strong> HTML, CSS, JavaScript, ReactJS
+          <strong>Frontend:</strong> HTML, CSS, Bootstrap, Tailwind, Shadcn
+          JavaScript, ReactJS
         </div>
         <div>
-          <strong>Backend:</strong> NodeJS, Python, MongoDB
+          <strong>Backend:</strong> NodeJS, Express Python, MongoDB
+        </div>
+        <div>
+          <strong>Framework:</strong>NextJS
         </div>
       </div>
     ),
@@ -49,7 +76,11 @@ const TerminalController = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[80vh] p-10  ">
+    <div
+      className="flex justify-center items-center min-h-[80vh] p-10"
+      ref={containerRef}
+      style={{ touchAction: "none" }}
+    >
       <div className=" max-w-6xl w-full">
         <h1 className="text-4xl font-bold text-white mb-6">My Terminal</h1>
         <div className="mt-10 h-[500px] text-green-500 shadow-lg ">
@@ -58,7 +89,7 @@ const TerminalController = () => {
               ref={terminalRef}
               commands={commands}
               welcomeMessage={
-                'Welcome to my terminal! Type "help" to see available commands.'
+                'Welcome to my ter  minal! Type "help" to see available commands.'
               }
               promptSymbol=">"
               themes={{
