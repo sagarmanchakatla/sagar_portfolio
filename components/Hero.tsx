@@ -220,6 +220,11 @@ const HoverFillButton = ({
   onClick,
   className,
   fillColor = "bg-gray-300",
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  className?: string;
+  fillColor?: string;
 }) => {
   return (
     <button
