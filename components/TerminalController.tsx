@@ -10,21 +10,22 @@ const TerminalController = () => {
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
-      // Prevent default touch behavior
-      const preventScroll = (e: TouchEvent) => {
-        e.preventDefault();
+      const handleTouchMove = (e: TouchEvent) => {
+        // Prevent scrolling only if the terminal is being interacted with
+        const terminalElement = container.querySelector(
+          ".react-terminal-wrapper"
+        );
+        if (terminalElement && terminalElement.contains(e.target as Node)) {
+          e.preventDefault();
+        }
       };
 
-      container.addEventListener("touchstart", preventScroll, {
-        passive: false,
-      });
-      container.addEventListener("touchmove", preventScroll, {
+      document.addEventListener("touchmove", handleTouchMove, {
         passive: false,
       });
 
       return () => {
-        container.removeEventListener("touchstart", preventScroll);
-        container.removeEventListener("touchmove", preventScroll);
+        document.removeEventListener("touchmove", handleTouchMove);
       };
     }
   }, []);
@@ -77,19 +78,18 @@ const TerminalController = () => {
 
   return (
     <div
-      className="flex justify-center items-center min-h-[80vh] p-10"
       ref={containerRef}
-      style={{ touchAction: "none" }}
+      className="flex justify-center items-center min-h-[80vh] p-10"
     >
-      <div className=" max-w-6xl w-full">
+      <div className="max-w-6xl w-full">
         <h1 className="text-4xl font-bold text-white mb-6">My Terminal</h1>
-        <div className="mt-10 h-[500px] text-green-500 shadow-lg ">
+        <div className="mt-10 h-[500px] text-green-500 shadow-lg">
           <TerminalContextProvider>
             <ReactTerminal
               ref={terminalRef}
               commands={commands}
               welcomeMessage={
-                'Welcome to my ter  minal! Type "help" to see available commands.'
+                'Welcome to my terminal! Type "help" to see available commands.'
               }
               promptSymbol=">"
               themes={{
