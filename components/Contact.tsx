@@ -79,7 +79,7 @@ const Contact = () => {
         error: errorMessage,
         success: false,
       });
-
+      console.log(error);
       toast("Failed to send message", {
         icon: "❌",
         style: {
