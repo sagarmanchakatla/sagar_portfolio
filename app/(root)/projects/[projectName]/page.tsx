@@ -599,26 +599,26 @@ const ProjectDetailsPage = () => {
       ref={heroRef}
       style={{
         background: `
-          radial-gradient(
-            500px circle at ${mousePosition.x}px ${mousePosition.y}px,
-            rgba(29, 78, 216, 0.20),
-            transparent 90%
-          ),
-          repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          )
-        `,
+            radial-gradient(
+              400px circle at ${mousePosition.x}px ${mousePosition.y}px,
+              rgba(29, 78, 216, 0.30),
+              transparent 80%
+            ),
+            repeating-linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.06) 0px,
+              rgba(255, 255, 255, 0.06) 1px,
+              transparent 1px,
+              transparent 20px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.06) 0px,
+              rgba(255, 255, 255, 0.06) 1px,
+              transparent 1px,
+              transparent 20px
+            )
+          `,
       }}
     >
       <div className="max-w-5xl mx-auto">

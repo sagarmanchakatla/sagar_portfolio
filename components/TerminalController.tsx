@@ -55,7 +55,9 @@ const TerminalController = () => {
   return (
     <div className="flex justify-center items-center min-h-[80vh] p-10  ">
       <div className=" max-w-6xl w-full">
-        <h1 className="text-4xl font-bold text-white mb-6">My Terminal</h1>
+        <h1 className="text-[33px] md:text-4xl font-bold text-white mb-6">
+          My Terminal
+        </h1>
         <div className="mt-10 h-[500px] text-green-500 shadow-lg ">
           <TerminalContextProvider>
             <ReactTerminal

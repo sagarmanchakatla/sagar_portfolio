@@ -6,10 +6,12 @@ import { IoHomeOutline } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { GoProjectRoadmap } from "react-icons/go";
 import { IoCloseOutline } from "react-icons/io5";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const menuItems = [
     { name: "Home", icon: IoHomeOutline, route: "/" },
@@ -35,7 +37,11 @@ const Nav = () => {
             {menuItems.map((item) => (
               <li
                 key={item.name}
-                className="cursor-pointer hover:text-[#0E78F9] transition-colors duration-300 text-[16px]"
+                className={`cursor-pointer transition-colors duration-300 text-[16px] ${
+                  pathname === item.route
+                    ? "text-[#0E78F9]"
+                    : "hover:text-[#0E78F9] text-white"
+                }`}
                 onClick={() => router.push(item.route)}
               >
                 {item.name}
@@ -89,21 +95,20 @@ const Nav = () => {
                 <div
                   className={`flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-300
                   ${
-                    item.name === "Home"
+                    pathname === item.route
                       ? "bg-[#0E78F9] bg-opacity-20"
                       : "hover:bg-white hover:bg-opacity-5"
                   }`}
-                  // onClick={() => router.push(item.route)}
                 >
                   <item.icon
                     size={20}
                     className={`${
-                      item.name === "Home" ? "text-blue-400" : "text-white"
+                      pathname === item.route ? "text-blue-400" : "text-white"
                     }`}
                   />
                   <span
                     className={`text-[16px] ${
-                      item.name === "Home" ? "text-blue-400" : "text-white"
+                      pathname === item.route ? "text-blue-400" : "text-white"
                     }`}
                   >
                     {item.name}

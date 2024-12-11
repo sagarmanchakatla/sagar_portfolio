@@ -95,7 +95,7 @@ const Contact = () => {
     <section className="flex flex-col items-center min-h-[70vh]  p-10">
       <Toaster />
       <div className="max-w-lg w-full p-8 bg-slate-800 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-center text-white mb-4">
+        <h1 className="text-[33px] md:text-4xl font-bold text-center text-white mb-4">
           Contact Me
         </h1>
         <p className="text-center text-gray-400 mb-8">

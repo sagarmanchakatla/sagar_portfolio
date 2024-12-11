@@ -19,7 +19,7 @@ const AnimatedHeader = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="space-y-8"
     >
-      <h1 className="text-5xl text-right font-bold">Skills</h1>
+      <h1 className="text-[33px] md:text-4xl text-right font-bold">Skills</h1>
       <motion.div
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -87,26 +87,26 @@ const SkillsPage = () => {
       className="text-3xl flex flex-col text-left text-white min-h-screen bg-[#111827] mt-20 px-4 py-16 relative overflow-hidden"
       style={{
         background: `
-          radial-gradient(
-            500px circle at ${mousePosition.x}px ${mousePosition.y}px,
-            rgba(29, 78, 216, 0.20),
-            transparent 90%
-          ),
-          repeating-linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.045) 0px,
-            rgba(255, 255, 255, 0.045) 2px,
-            transparent 2px,
-            transparent 18px
-          )
-        `,
+            radial-gradient(
+              400px circle at ${mousePosition.x}px ${mousePosition.y}px,
+              rgba(29, 78, 216, 0.30),
+              transparent 80%
+            ),
+            repeating-linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0.06) 0px,
+              rgba(255, 255, 255, 0.06) 1px,
+              transparent 1px,
+              transparent 20px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.06) 0px,
+              rgba(255, 255, 255, 0.06) 1px,
+              transparent 1px,
+              transparent 20px
+            )
+          `,
       }}
     >
       <div

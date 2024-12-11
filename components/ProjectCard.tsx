@@ -21,7 +21,7 @@ const StarRating = ({ rating }: { rating: number }) => (
     {[...Array(5)].map((_, index) => (
       <svg
         key={index}
-        className={`w-4 h-4 ${
+        className={`w-3 h-3 ${
           index < rating ? "text-[#0E78F9]" : "text-gray-300"
         }`}
         fill="currentColor"
@@ -36,33 +36,33 @@ const StarRating = ({ rating }: { rating: number }) => (
 const getIcon = (iconName: string) => {
   switch (iconName.toLowerCase()) {
     case "react":
-      return <FaReact className="text-4xl" />;
+      return <FaReact className="text-2xl" />;
     case "express":
-      return <SiExpress className="text-4xl" />;
+      return <SiExpress className="text-2xl" />;
     case "node":
-      return <SiNodedotjs className="text-4xl" />;
+      return <SiNodedotjs className="text-2xl" />;
     case "mongodb":
-      return <SiMongodb className="text-4xl" />;
+      return <SiMongodb className="text-2xl" />;
     case "html":
-      return <SiHtml5 className="text-4xl" />;
+      return <SiHtml5 className="text-2xl" />;
     case "css":
-      return <SiCss3 className="text-4xl" />;
+      return <SiCss3 className="text-2xl" />;
     case "javascript":
-      return <SiJavascript className="text-4xl" />;
+      return <SiJavascript className="text-2xl" />;
     case "tailwind":
-      return <SiTailwindcss className="text-4xl" />;
+      return <SiTailwindcss className="text-2xl" />;
     case "git":
-      return <SiGit className="text-4xl" />;
+      return <SiGit className="text-2xl" />;
     case "next":
-      return <SiNextdotjs className="text-4xl" />;
+      return <SiNextdotjs className="text-2xl" />;
     case "python":
-      return <FaPython className="text-4xl" />;
+      return <FaPython className="text-2xl" />;
     case "bootstrap":
-      return <FaBootstrap className="text-4xl" />;
+      return <FaBootstrap className="text-2xl" />;
     case "postgresql":
-      return <SiPostgresql className="text-4xl" />;
+      return <SiPostgresql className="text-2xl" />;
     case "sql":
-      return <SiSqlite className="text-4xl" />;
+      return <SiSqlite className="text-2xl" />;
     default:
       return null;
   }
@@ -70,6 +70,7 @@ const getIcon = (iconName: string) => {
 
 const ProjectCard = ({ project, skills = false }: any) => {
   const router = useRouter();
+
   if (skills) {
     return (
       <div className="px-2 text-left">
@@ -80,7 +81,7 @@ const ProjectCard = ({ project, skills = false }: any) => {
               {project.title}
             </h3>
           </div>
-          <p className="text-[#AEAAAA] mb-4 text-[16px]">
+          <p className="text-[#AEAAAA] line-clamp-3 mb-4 text-base">
             {project.description}
           </p>
           <StarRating rating={project.rating} />
@@ -91,13 +92,15 @@ const ProjectCard = ({ project, skills = false }: any) => {
 
   return (
     <div
-      className="bg-[#1e293b] p-6 rounded-lg h-80 transform hover:scale-105 transition-transform duration-300"
+      className="bg-[#1e293b] p-6 rounded-lg h-full transform hover:scale-105 transition-transform duration-300 cursor-pointer"
       onClick={() => router.push(`/projects/${project.title}`)}
     >
       <h3 className="text-2xl font-semibold text-[#fdffe2] mb-2">
         {project.title}
       </h3>
-      <p className="text-[#AEAAAA] mb-8 text-[16px]">{project.description}</p>
+      <p className="text-[#AEAAAA] line-clamp-3 mb-4 text-base">
+        {project.description}
+      </p>
       <div className="flex flex-wrap gap-2 mb-4">
         {project.tags &&
           project.tags.map((tag: any, index: any) => (
@@ -109,8 +112,13 @@ const ProjectCard = ({ project, skills = false }: any) => {
             </span>
           ))}
       </div>
-      <button className="px-4 py-2 mt-2 text-[#fdffe2] rounded-md font-semibold text-sm flex items-center gap-1 hover:bg-[#4c6399] transition-colors bg-[#0E78F9]">
-        Read More &rarr;
+      <button className="relative px-4 py-2 mt-2 text-[#ffffff] rounded-md font-semibold text-base flex items-center gap-1 overflow-hidden group transition-colors bg-[#0E78F9]">
+        {/* Background fill effect */}
+        <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+        {/* Button content */}
+        <span className="relative z-10 flex items-center gap-1 group-hover:text-[#0E78F9]">
+          Read More &rarr;
+        </span>
       </button>
     </div>
   );
