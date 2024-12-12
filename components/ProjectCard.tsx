@@ -92,7 +92,7 @@ const ProjectCard = ({ project, skills = false }: any) => {
 
   return (
     <div
-      className="bg-[#1e293b] p-6 rounded-lg h-full transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+      className="bg-[#1e293b] p-6 rounded-lg h-72 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
       onClick={() => router.push(`/projects/${project.title}`)}
     >
       <h3 className="text-2xl font-semibold text-[#fdffe2] mb-2">

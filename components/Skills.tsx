@@ -140,7 +140,7 @@ const Skills: React.FC = () => {
                         {skill.title}
                       </h3>
                     </div>
-                    <p className="text-[#AEAAAA] mb-4 text-[14px] md:text-[16px]">
+                    <p className="text-[#AEAAAA] mb-4 line-clamp-3 text-[14px] md:text-[16px]">
                       {skill.description}
                     </p>
                     <StarRating rating={skill.rating} />

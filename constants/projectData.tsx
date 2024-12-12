@@ -5,7 +5,7 @@ export const projectsData = [
     title: "Connect.io",
     description:
       "A video conferencing application built with NextJS and Stream SDK, designed to facilitate seamless virtual meetings.",
-    tags: ["NextJS", "Stream SDK", "Web Development"],
+    tags: ["Web Development", "NextJS", "Stream SDK", "SocketIO"],
     status: "Completed",
     summary:
       "Connect.io is a video conferencing application featuring attendance tracking, private meetings, scheduling, and recording functionalities to support smooth and efficient virtual meetings.",
@@ -67,7 +67,7 @@ export const projectsData = [
     title: "CareConnect",
     description:
       "A unified platform for old age homes and orphanages built with the MERN stack.",
-    tags: ["MERN", "Web Development", "Social Good"],
+    tags: ["Web Development", "Social Good", "MERN Stack", "Firebase"],
     status: "Completed",
     summary:
       "Care Connect bridges NGOs and volunteers, allowing NGOs to showcase events like donation drives, while providing volunteers a platform to discover and participate in causes aligned with their interests.",
@@ -92,7 +92,7 @@ export const projectsData = [
     title: "EndlessRunner",
     description:
       "Developed a real-time gesture-to-keyboard system for Unity using Python, OpenCV, and MediaPipe.",
-    tags: ["Python", "OpenCV", "MediaPipe", "Unity"],
+    tags: ["Python", "Machine Learning", "OpenCV", "MediaPipe", "Unity"],
     status: "Completed",
     summary:
       "Developed a hand gesture recognition system using Python, OpenCV, MediaPipe, and scikit-learn. Implemented real-time detection to translate gestures into keyboard commands and integrated the system with a Unity game for gesture-based control, enhancing user interaction and providing innovative control methods for various applications.",
