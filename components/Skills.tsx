@@ -20,6 +20,10 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useRouter } from "next/navigation";
 import { IconType } from "react-icons";
+import { Button } from "./ui/button";
+
+import Marquee from "@/components/ui/marquee";
+
 
 // Define interfaces for type safety
 interface Skill {
@@ -113,7 +117,7 @@ const Skills: React.FC = () => {
             Skills
           </h1>
           <div className="h-full w-full mt-20">
-            <Carousel
+            {/* <Carousel
               showArrows={false}
               showStatus={false}
               showThumbs={false}
@@ -147,7 +151,29 @@ const Skills: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </Carousel>
+            </Carousel> */}
+
+            <Marquee pauseOnHover className="[--duration:20s]">
+              {skillsData.map((skill: Skill, index: number) => (
+                <div className="px-2 text-left" key={index}>
+                  <div className="bg-[#1e293b] p-6 rounded-lg h-72 mx-2 w-[350px] transition-transform duration-300">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="text-[#fdffe2]">
+                        {getIcon(skill.icon)}
+                      </div>
+                      <h3 className="text-[20px] md:text-2xl font-semibold text-[#fdffe2]">
+                        {skill.title}
+                      </h3>
+                    </div>
+                    <p className="text-[#AEAAAA] mb-4 line-clamp-3 text-[14px] md:text-[16px]">
+                      {skill.description}
+                    </p>
+                    <StarRating rating={skill.rating} />
+                  </div>
+                </div>
+              ))}
+            </Marquee>
+
           </div>
           <button
             className="relative px-4 py-3 bg-gray-200 rounded-lg text-black font-medium text-sm flex items-center justify-center gap-2 overflow-hidden group transition-colors m-auto mt-10"
